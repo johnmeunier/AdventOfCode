@@ -1,4 +1,4 @@
-import contextlib
+from itertools import combinations
 import time
 
 inputs = [
@@ -205,11 +205,11 @@ inputs = [
 ]
 
 tic = time.perf_counter()
-for i in inputs:
-    for j in inputs:
-        for k in inputs:
-            if i + j + k == 2020:
-                print(i * j * k)
+
+for x, y, z in combinations(inputs, 3):
+    if x + y + z == 2020:
+        print(x * y * z)
+        break
 
 
 toc = time.perf_counter()
