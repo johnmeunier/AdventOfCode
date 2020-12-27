@@ -1003,7 +1003,7 @@ const inputs = [
 console.time();
 console.log(
   inputs.filter((input) => {
-    const [, pos1, pos2, letter, chain] = input.split(/(\d+)-(\d+) (\w): (.+)/);
+    const [, pos1, pos2, letter, chain] = input.match(/(\d+)-(\d+) (\w): (.+)/);
     return (chain[pos1 - 1] === letter) ^ (chain[pos2 - 1] === letter);
   }).length
 );
