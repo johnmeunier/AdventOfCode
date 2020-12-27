@@ -1,0 +1,15 @@
+{
+  "name": "adventsofcode",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "bsb:transpile": "./node_modules/.bin/bsb -w"
+  },
+  "author": "johnmeunier",
+  "license": "ISC",
+  "dependencies": {
+    "bs-platform": "^8.4.2"
+  }
+}
