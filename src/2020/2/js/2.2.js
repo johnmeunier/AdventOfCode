@@ -1003,11 +1003,7 @@ const inputs = [
 console.time();
 console.log(
   inputs.filter((input) => {
-    const splitted = input.split(" ");
-    const pos1 = splitted[0].split("-")[0];
-    const pos2 = splitted[0].split("-")[1];
-    const letter = splitted[1][0];
-    const chain = splitted[2];
+    const [, pos1, pos2, letter, chain] = input.split(/(\d+)-(\d+) (\w): (.+)/);
     return (chain[pos1 - 1] === letter) ^ (chain[pos2 - 1] === letter);
   }).length
 );

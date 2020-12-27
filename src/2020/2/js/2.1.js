@@ -1003,11 +1003,7 @@ const inputs = [
 console.time();
 console.log(
   inputs.filter((input) => {
-    const splitted = input.split(" ");
-    const min = splitted[0].split("-")[0];
-    const max = splitted[0].split("-")[1];
-    const letter = splitted[1][0];
-    const chain = splitted[2];
+    const [, min, max, letter, chain] = input.split(/(\d+)-(\d+) (\w): (.+)/);
     const occur = chain.split(letter).length - 1;
     return occur >= min && occur <= max;
   }).length
